@@ -1,22 +1,30 @@
 <#
   .NOTES
   ===========================================================================
-   Created on:    20-07-2025
-   Created by:    Júlio César Vasconcelos
+   Created on:    20.12.2022
+   Created by:    Simon Skotheimsvik
+   Updated on:    19.07.2025
+   Updated by:    Júlio César Vasconcelos
    Filename:      EnableMicrosoftSensitivityLabelsinAdobeAcrobat.ps1
-   Info:          https://jornada365.cloud
+   Info:          https://github.com/Jornada-365
   ===========================================================================
   
   .DESCRIPTION
     This script sets registry information in Windows 10 and Windows 11
     to enable Adobe Acrobat and Adobe Reader to work with Microsoft Sensitivity labels
-    defined in Microsoft Purview, including Browser Authentication and Double Key Encryption (DKE).
-       
+    defined in Microsoft Purview, including Browser Authentication and Double Key Encryption (DKE)
+    as defined by Nikki Chapple in her blog
+    https://nikkichapple.com/how-to-use-sensitivity-labels-with-your-pdf-files/
+    
     The script can be assigned to users in Microsoft Endpoint Manager.
     
   .EXAMPLE
     EnableMicrosoftSensitivityLabelsinAdobeAcrobat.ps1
 #>
+
+# Set the execution policy to bypass for the device to avoid script blocking
+# Requires administrative privileges
+Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy Bypass -Force
 
 # Get information of current user
 $currentUser = (Get-Process -IncludeUserName -Name explorer | Select-Object -First 1 | Select-Object -ExpandProperty UserName).Split("\")[1] 
