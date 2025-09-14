@@ -13,6 +13,9 @@
   .EXAMPLE
     AutoPilotV2.ps1
 #>
+
+# Set the execution policy to bypass for the device to avoid script blocking
+# Requires administrative privileges
  
  
  [void][reflection.assembly]::Load('System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089')
@@ -9119,5 +9122,6 @@ Main ($CommandLine)
 # 5qPl1lwJ5TQlFDHWSuUTfKRP+o9ui3YoxJVZaPt66VD81ufnH01iACqkMXiqTQPS
 # lNitjTg2UH4iZMI=
 # SIG # End signature block
+
 
 
