@@ -8,8 +8,7 @@
   ===========================================================================
   
   .DESCRIPTION
-    This script sets registry information in Windows 10 and Windows 11
-    to enable Adobe Acrobat and Adobe Reader to work with Microsoft Sensitivity labels.
+    This script uploads the machine serial number to AutopilotV2 within Intune.
            
   .EXAMPLE
     AutoPilotV2.ps1
@@ -9120,4 +9119,5 @@ Main ($CommandLine)
 # 5qPl1lwJ5TQlFDHWSuUTfKRP+o9ui3YoxJVZaPt66VD81ufnH01iACqkMXiqTQPS
 # lNitjTg2UH4iZMI=
 # SIG # End signature block
+
 
